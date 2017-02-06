@@ -33,7 +33,7 @@ class AjaxFileUploader(object):
                     if 'qqfile' in request.GET:
                         filename = request.GET['qqfile']
                     else:
-                        filename = request.REQUEST['qqfilename']
+                        filename = request.get('qqfilename')
                 except KeyError:
                     return HttpResponseBadRequest("AJAX request not valid")
             # not an ajax upload, so it was the "basic" iframe version with
